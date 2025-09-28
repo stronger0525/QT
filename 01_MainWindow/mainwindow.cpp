@@ -2,6 +2,10 @@
 #include<QMenuBar>
 #include<QToolBar>
 #include<QPushButton>
+#include<QStatusBar>
+#include<QLabel>
+#include<QDockWidget>
+#include<QtextEdit>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -31,6 +35,24 @@ MainWindow::MainWindow(QWidget *parent)
    toolBar->addAction(openAction);
    QPushButton *btn= new QPushButton("aaa",this);
    toolBar->addWidget(btn);
+   //状态栏 最多一个
+   QStatusBar *stBar=statusBar();
+   setStatusBar(stBar);
+   //放标签控件
+   QLabel *label=new QLabel("提示信息",this);
+   stBar->addWidget(label);
+   QLabel *label2=new QLabel("右侧提示信息",this);
+   stBar->addPermanentWidget(label2);
+   //铆接部件
+   QDockWidget *dockWidget=new QDockWidget("浮动",this);
+   addDockWidget(Qt::BottomDockWidgetArea,dockWidget);
+
+   dockWidget->setAllowedAreas(Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea);
+
+   //设置中心部件
+   QTextEdit *edit=new QTextEdit();
+   setCentralWidget(edit);
+
 }
 
 MainWindow::~MainWindow() {}

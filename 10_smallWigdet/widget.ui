@@ -15,7 +15,34 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="SmallWidget" name="widget" native="true"/>
+    <widget class="SmallWidget" name="widget" native="true">
+     <widget class="QPushButton" name="btn_get">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>220</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>获取当前值</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_set">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>280</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>设置到一半</string>
+      </property>
+     </widget>
+    </widget>
    </item>
   </layout>
  </widget>
